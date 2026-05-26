@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="100%" height="100%">
+  <defs>
+    <!-- Accent Yellow Gradient -->
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff066" />
+      <stop offset="50%" stop-color="#ffdd00" />
+      <stop offset="100%" stop-color="#d4b200" />
+    </linearGradient>
+
+    <!-- Glowing effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Metallic dark background gradient for embedded badges -->
+    <linearGradient id="darkMetal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e1e" />
+      <stop offset="100%" stop-color="#0a0a0a" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(10, 10)">
+    <!-- High-Tech Electrical Icon: Dynamic Hexagonal Circuit 'E' -->
+    <g class="logo-icon" transform="translate(0, 0)">
+      <!-- Hexagonal Border Glow -->
+      <polygon points="50,5 90,28 90,72 50,95 10,72 10,28" 
+               fill="none" 
+               stroke="url(#yellowGrad)" 
+               stroke-width="1.5" 
+               opacity="0.3" />
+      
+      <!-- Inner Circuit Nodes -->
+      <circle cx="50" cy="5" r="3" fill="#ffdd00" />
+      <circle cx="90" cy="28" r="3" fill="#ffdd00" />
+      <circle cx="10" cy="72" r="3" fill="#ffdd00" />
+
+      <!-- Main Futuristic 'E' Lightning Bolt Shape -->
+      <path d="M 30,25 
+               H 75 
+               L 65,37 
+               H 42 
+               L 38,47 
+               H 68 
+               L 58,59 
+               H 34 
+               L 26,75 
+               H 72 
+               L 64,85 
+               H 18 
+               Z" 
+            fill="url(#yellowGrad)" 
+            filter="url(#glow)" />
+            
+      <!-- Core glowing node representing electricity -->
+      <circle cx="45" cy="48" r="4" fill="#ffffff" filter="url(#glow)" />
+    </g>
+
+    <!-- Company Name Typography -->
+    <g transform="translate(110, 15)">
+      <!-- Primary Futuristic Text "ELECTROVOX" -->
+      <text x="0" y="42" 
+            fill="#ffffff" 
+            font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" 
+            font-size="44" 
+            font-weight="900" 
+            letter-spacing="4" 
+            style="text-transform: uppercase;">
+        Electro<tspan fill="url(#yellowGrad)">vox</tspan>
+      </text>
+
+      <!-- Sub-Text "ENTERPRISES" -->
+      <text x="3" y="68" 
+            fill="#a0a0a0" 
+            font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" 
+            font-size="14" 
+            font-weight="600" 
+            letter-spacing="8" 
+            style="text-transform: uppercase;">
+        Enterprises
+      </text>
+      
+      <!-- Accent Circuit Line under enterprises -->
+      <line x1="3" y1="78" x2="300" y2="78" stroke="url(#yellowGrad)" stroke-width="2" opacity="0.8" />
+      <circle cx="300" cy="78" r="2" fill="#ffdd00" />
+    </g>
+  </g>
+</svg>
