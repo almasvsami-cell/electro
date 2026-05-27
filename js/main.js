@@ -49,6 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleScroll = () => {
     const scrollPos = window.scrollY;
 
+    // Calculate scroll percentage
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollHeight > 0 ? (scrollPos / scrollHeight) * 100 : 0;
+    document.documentElement.style.setProperty('--scroll-percent', `${scrollPercent}%`);
+
     // Sticky Nav shrink
     if (scrollPos > 50) {
       navbar.classList.add('scrolled');
@@ -148,6 +153,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+
+  /* =========================================================================
+     4b. JS-IN-CSS CARD SPOTLIGHT GLOW EFFECT
+     ========================================================================= */
+  const glowCards = document.querySelectorAll('.glass-card, .product-card, .service-card, .gallery-item');
+  glowCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 
 
   /* =========================================================================
